@@ -1,5 +1,5 @@
 # Builder Stage
-FROM ubuntu:24.04 as builder
+FROM ubuntu:24.10 as builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -44,7 +44,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Final Stage
-FROM ubuntu:24.04 as final
+FROM ubuntu:24.10 as final
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
